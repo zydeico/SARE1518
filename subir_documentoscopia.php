@@ -130,7 +130,6 @@ print('<META HTTP-EQUIV="Refresh" CONTENT=0;URL=administrador.php >');
 elseif ($_POST['Subir_Copia_Poder_Notarial']) {
 $conexion = mysql_connect("","","");
 mysql_select_db("sare",$conexion);
-
 $fol=$_POST["fol"];
 $target_path = "../documentos123/";
 $nombre = $fol."_"."Poder_Notarial.pdf";
@@ -146,6 +145,26 @@ print "<script>alert('$mens')</script>";
 print('<META HTTP-EQUIV="Refresh" CONTENT=0;URL=administrador.php >');	
 }else{
 //echo "Ha ocurrido un error, trate de nuevo!";
-} }
+}}
+
+//Formato de Tramite
+elseif ($_POST['Subir_Formato_de_Tramite']) {
+    $conexion = mysql_connect("","","");
+    mysql_select_db("sare",$conexion);
+    $fol=$_POST["fol"];
+    $target_path = "../documentos123/";
+    $nombre = $fol."_"."Formato_de_Tramite.pdf";
+    $target_path = $target_path . basename($nombre); 
+    if(move_uploaded_file($_FILES['input1g']['tmp_name'], $target_path)) 
+    { 
+    $imagen_7 = basename($nombre);
+    $sql="Update tblsolicitud Set formtramite='$imagen_7' where folio='$fol'";
+    mysql_query($sql);
+    $mens = "SE HA ENVIADO EXITOSAMENTE SU ARCHIVO";
+    print "<script>alert('$mens')</script>";
+    print('<META HTTP-EQUIV="Refresh" CONTENT=0;URL=administrador.php >');	
+    }else{
+    //echo "Ha ocurrido un error, trate de nuevo!";
+    }}
 	 
 ?>

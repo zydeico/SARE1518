@@ -103,7 +103,7 @@ while ($row = mysql_fetch_array($resultado, MYSQL_ASSOC)) {
 	
 	<div class="col-md-6">
 		<div class="form-group">
-    		<label for="c">CLACIFICACIÓN</label>
+    		<label for="c">CLACIFICACIï¿½N</label>
     		<input type="text" class="form-control"  id="c<?php echo $row['folio']; ?>" value="<?php echo $row['clasificacion']; ?>">
  		 </div>
 	</div>
@@ -121,7 +121,7 @@ while ($row = mysql_fetch_array($resultado, MYSQL_ASSOC)) {
 <div class="row">
 	<div class="col-md-8">
 		<div class="form-group">
-    		<label for="d">DIRECCIÓN ESTABLECIMIENTO</label>
+    		<label for="d">DIRECCIï¿½N ESTABLECIMIENTO</label>
     		<input type="text" class="form-control"  id="d<?php echo $row['folio']; ?>" value="<?php echo $row['destablecimiento']; ?>">
   		</div>
 	</div>
@@ -164,7 +164,7 @@ while ($row = mysql_fetch_array($resultado, MYSQL_ASSOC)) {
 	</div>
 	<div class="col-md-6">
 		<div class="form-group">
-    		<label for="t">TELÉFONO</label>
+    		<label for="t">TELï¿½FONO</label>
     		<input type="text" class="form-control"  id="t<?php echo $row['folio']; ?>" value="<?php echo $row['tel']; ?>">
   		</div>
 	</div>  
@@ -203,7 +203,7 @@ while ($row = mysql_fetch_array($resultado, MYSQL_ASSOC)) {
 	</div>
 	<div class="col-md-8">
 		<div class="form-group">
-    		<label for="i">INVERSIÓN</label>
+    		<label for="i">INVERSIï¿½N</label>
     		<input type="text" class="form-control"  id="i<?php echo $row['folio']; ?>" value="<?php echo $row['inversion']; ?>">
   		</div>
 	</div>  
@@ -419,14 +419,14 @@ while ($row = mysql_fetch_array($resultado, MYSQL_ASSOC)) {
 <div class="row">
 	<div class="col-md-8">
 		<div class="form-group">
-    		<label for="fn">Revisión de Predial</label>
+    		<label for="fn">Revisiï¿½n de Predial</label>
     		<input id="input1d"  name="input1d" type="file" class="file" data-show-preview="false" multiple data-show-upload="false" data-max-File-Size="15000"  data-allowed-file-extensions='["pdf"]'>
   		</div>
 	</div>
 	<div class="col-md-4">
 		<div class="form-group">
         <span class="glyphicon glyphicon-arrow-down"></span>
-        	<label for="fn">Revisión de Predial</label>
+        	<label for="fn">Revisiï¿½n de Predial</label>
     		<input type="submit" value="Subir_Revision_de_Predial" name="Subir_Revision_de_Predial" id="Subir_Revision_de_Predial" class="btn btn-success btn-sm"  />
   		</div>
 	</div>
@@ -435,14 +435,14 @@ while ($row = mysql_fetch_array($resultado, MYSQL_ASSOC)) {
 <div class="row">
 	<div class="col-md-8">
 		<div class="form-group">
-    		<label for="fn">Copia de Identidicación</label>
+    		<label for="fn">Copia de Identidicaciï¿½n</label>
     		<input id="input1e"  name="input1e" type="file" class="file" data-show-preview="false" multiple data-show-upload="false" data-max-File-Size="15000"  data-allowed-file-extensions='["pdf"]'>
   		</div>
 	</div>
 	<div class="col-md-4">
 		<div class="form-group">
         <span class="glyphicon glyphicon-arrow-down"></span>
-        	<label for="fn">Identificación</label>
+        	<label for="fn">Identificaciï¿½n</label>
     		<input type="submit" value="Subir_Copia_de_Identificacion" name="Subir_Copia_de_Identificacion" id="Subir_Copia_de_Identificacion" class="btn btn-success btn-sm"  />
   		</div>
 	</div>
@@ -476,6 +476,13 @@ while ($row = mysql_fetch_array($resultado, MYSQL_ASSOC)) {
         <span class="glyphicon glyphicon-arrow-down"></span>
         	<label for="fn">Poder Notarial</label>
     		<input type="submit" value="Subir_Copia_Poder_Notarial" name="Subir_Copia_Poder_Notarial" id="Subir_Copia_Poder_Notarial" class="btn btn-success btn-sm"  />
+  		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+        <span class="glyphicon glyphicon-arrow-down"></span>
+        	<label for="fn">Formato de Tramite</label>
+    		<input type="submit" value="Subir_Copia_de_Tramite" name="Subir_Copia_Poder_Notarial" id="Subir_Copia_Poder_Notarial" class="btn btn-success btn-sm"  />
   		</div>
 	</div>
 </div>
