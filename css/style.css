@@ -1,0 +1,187 @@
+.person{
+	display: inline-block;
+	width: 350px;
+	background-color: #EEE;
+	padding: 20px;
+	margin: 10px;
+	border-radius: 10px;
+	border-style: dotted;
+}
+
+.name{
+	background-color: #9CF;
+	padding: 5px;
+	border-radius: 5px;
+	font-family: verdana;
+}
+
+.location{
+	font-family: Arial;
+}
+
+/*h1,h2{
+	font-family: Arial;
+text-align: center;
+}*/
+
+
+.small{
+	font-size: 0.7em;
+	color: #888;
+}
+
+.etiqueta-formulario {
+	text-align: right;
+}
+
+.contenedor{
+	width: 800px;
+	margin: auto;
+	display: block;
+}
+
+.input-group{
+	margin-bottom: 10px;
+}
+
+.fechas{
+	display: inline !important;
+	width: 25%;
+}
+
+.input-group-addon{
+	/*background-color: #0F0 !important;*/
+}
+
+.radio{
+	margin-left: 5px;
+}
+
+.form-signin{
+	width: 400px;
+	margin: 0 auto;
+}
+
+.grande{
+	font-size: 1.5em;
+}
+
+.orange{
+	color: #FF8800;
+}
+
+.form-estado{
+	background-color: #CCFF99;
+}
+
+.form-contacto{
+	background-color: #AAEEDD;
+}
+
+.form-domicilio{
+	background-color: #BBDDFF;
+}
+	/*background-color: #AAFFCC;*/
+
+
+.form-asentamiento{
+	background-color: #AACCFF;
+}
+
+.form-estado, .form-contacto, .form-domicilio, .form-asentamiento{
+	padding: 8px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
+
+.checkbox-idiomas{
+	display: inline-block;
+	margin-right: 20px;
+}
+
+
+.inline{
+	display: inline-block;
+	margin-right: 70px;
+}
+
+.persona-info{
+	border-radius: 5px;
+	background-color: #F1EEDA;
+	padding: 20px;
+	margin: 20px;
+}
+
+.persona-nombre{
+	background-color: #009D84;
+	color: #FFFFFF;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 4px;
+	font-size: 1.5em;
+	display: inline-block;
+}
+
+.persona-info p{
+	padding: 2px;
+	margin: 10px;
+	font-size: 1.3em;
+}
+
+.persona-contacto{
+	color: #FFFFFF;
+	background-color: #4C565E;
+	font-size: 1.2em;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 4px;
+	display: inline-block;
+}
+
+h3 .label{
+	/*margin: 100px !important;*/
+}
+
+
+.label{
+	display: inline-block;
+}
+
+.encabezado {
+	height: 100px;
+	vertical-align: bottom;
+}
+
+.encabezado h3, .encabezado img{
+	display: inline-block;
+	margin: 5px;
+	float: right;
+	clear: right;
+	height: 70px;
+	vertical-align: text-bottom;
+}
+
+.textbottom {
+	vertical-align:text-bottom;
+}
+
+.fecha {
+	float: right;
+}
+
+.text-info {
+	
+}
+
+
+.yellow{
+	color: #FF0;
+	border-color: #FF0;
+}
+
+.dark {
+	background-color: #444;
+	color: #FFF;
+}

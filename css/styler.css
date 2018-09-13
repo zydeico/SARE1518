@@ -1,0 +1,54 @@
+.person{
+	display: inline-block;
+	width: 350px;
+	background-color: #EEE;
+	padding: 20px;
+	margin: 10px;
+	border-radius: 10px;
+	border-style: dotted;
+}
+
+.name{
+	background-color: #9CF;
+	padding: 5px;
+	border-radius: 5px;
+	font-family: verdana;
+}
+
+.location{
+	font-family: Arial;
+}
+
+h1,h2{
+	font-family: Arial;
+text-align: center;
+}
+
+
+.small{
+	font-size: 0.7em;
+	color: #888;
+}
+
+.etiqueta-formulario {
+	text-align: right;
+}
+
+.contenedor{
+	width: 800px;
+	margin: auto;
+	display: block;
+}
+
+.input-group{
+	margin-bottom: 10px;
+}
+
+.fechas{
+	display: inline !important;
+	width: 25%;
+}
+
+.input-group-addon{
+	/*background-color: #0F0 !important;*/
+}
