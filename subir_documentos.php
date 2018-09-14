@@ -194,6 +194,4 @@ elseif ($_POST['Subir_Formato_de_Tramite']) {
     }else{
     //echo "Ha ocurrido un error, trate de nuevo!";
     }}
-	 
-	 
 ?>
