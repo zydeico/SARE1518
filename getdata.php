@@ -330,8 +330,17 @@ while ($row = mysql_fetch_array($resultado, MYSQL_ASSOC)) {
 	$bcpnotarial = file_exists("../documentos123/".$cpnotarial);
 	if ($bcpnotarial==1){
 	   echo "<a href='../documentos123/".$cpnotarial."'>$cpnotarial</a><br>"; 	
-		
+	
 		}
+
+		$no= $row['folio'];
+		$formatotramite=$no."Formato_de_Tramite.pdf";	
+		$formatotramite = file_exists("../documentos123/".$formatotramite);
+		if ($formatotramite==1){
+		   echo "<a href='../documentos123/".$formatotramite."'>$formatotramite</a><br>"; 	
+		
+			}
+			
 		?>
 		</form>
       </div>
@@ -482,14 +491,11 @@ while ($row = mysql_fetch_array($resultado, MYSQL_ASSOC)) {
 		<div class="form-group">
         <span class="glyphicon glyphicon-arrow-down"></span>
         	<label for="fn">Formato de Tramite</label>
-    		<input type="submit" value="Subir_Copia_de_Tramite" name="Subir_Copia_Poder_Notarial" id="Subir_Copia_Poder_Notarial" class="btn btn-success btn-sm"  />
+    		<input type="submit" value="Subir_Formato_de_Tramite" name="Subir_Formato_de_Tramite"" id="Subir_Formato_de_Tramite"" class="btn btn-success btn-sm"  />
   		</div>
 	</div>
 </div>
 </form>     
- 
-
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

@@ -715,7 +715,7 @@ if ( !$result )
 		<div class="input-group">
 			<div  style="background:rgba(231,231,231,1.00); padding:8px;border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;-webkit-border-radius: 10px 10px 10px 10px;">
 			<p></p>
-    		<span class="input-group" id="sizing-addon2" style="font-size:16px; font-weight:bold;"> Copia de Identificaci&oacute;n</span>
+    		<span class="input-group" id="sizing-addon2" style="font-size:16px; font-weight:bold;">Formato de Tramite</span>
 	 		 <input type="file"  class="form-control-addon" placeholder="" aria-describedby="sizing-addon2" name="identificacion[]" multiple><br />
       		<button class="btn btn-sm btn-primary" type="submit" name="enviar" value="Enviar">Subir Identificaci&oacute;n</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
@@ -778,8 +778,6 @@ if ( !$result )
             }else{
 				 echo '<p></p>';
 				echo "<p style='color:red;'>".$_FILES["FormatoTramite"]["name"][$i]." - NO es un archivo PDF"."</p>";
-                
-				
             }
         }
     }else{
