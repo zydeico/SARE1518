@@ -143,7 +143,7 @@ if ( !$result )
         
 </div>
 
-    
+<!--Entrada nueva?--->    
     <div class="col-md-6">
      <br />
 		<div class="input-group">
@@ -220,12 +220,12 @@ if ( !$result )
         //echo "<br>No se ha subido ninguna imagen";
     }
     ?>  
-
     		</div>
     	</div>      
 	</div>
-    
 </div>
+
+
 
 <div class="row">
 
@@ -707,6 +707,91 @@ if ( !$result )
     	</div>
     </div>      
 </div>
+
+
+<!--Código para actualizar el formato de trámite--->    
+<div class="col-md-6">
+     <br />
+		<div class="input-group">
+			<div  style="background:rgba(231,231,231,1.00); padding:8px;border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;-webkit-border-radius: 10px 10px 10px 10px;">
+			<p></p>
+    		<span class="input-group" id="sizing-addon2" style="font-size:16px; font-weight:bold;"> Copia de Identificaci&oacute;n</span>
+	 		 <input type="file"  class="form-control-addon" placeholder="" aria-describedby="sizing-addon2" name="identificacion[]" multiple><br />
+      		<button class="btn btn-sm btn-primary" type="submit" name="enviar" value="Enviar">Subir Identificaci&oacute;n</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <input type="checkbox"  data-toggle="toggle" data-size="small" data-on="<i class='glyphicon glyphicon-ok'></i>"  data-off="<i class='glyphicon glyphicon-remove'></i>" data-onstyle="success"
+	  <?php 
+  			$file ='../documentos123/'.$_SESSION[folio_generado]."_"."Formato_de_tramite.pdf";
+    		//Devuelve true
+     		$exists = file_exists( $file );
+	  
+	 		if( $exists =='1') print "checked=true"?> DISABLED /></label>
+            <br>
+			<?php
+
+    # definimos la carpeta destino
+    $carpetaDestino="../documentos123/";
+ 
+    # si hay algun archivo que subir
+    if($_FILES["FormatoTramite"]["name"][0])
+    {
+	
+        # recorremos todos los arhivos que se han subido
+        for($i=0;$i<count($_FILES["FormatoTramite"]["name"]);$i++)
+        {
+ 
+            # si es un formato de pdf
+            if($_FILES["FormatoTramite"]["type"][$i]=="application/pdf" )
+            {
+ 
+                # si exsite la carpeta o se ha creado
+                if(file_exists($carpetaDestino) || @mkdir($carpetaDestino))
+                {
+					
+                    $origen=$_FILES["FormatoTramite"]["tmp_name"][$i];
+					$destino=$carpetaDestino.$_FILES["archivo"]["name"][$i];
+					$destino=$carpetaDestino.$_SESSION[folio_generado]."_"."Formato_de_tramite.pdf";
+					
+                   
+                    # movemos el archivo
+					
+                    if(@move_uploaded_file($origen, $destino))
+                    {
+                        //echo "<br>".$_FILES["identificacion"]["name"][$i]." movido correctamente";
+						
+						$conexion = mysql_connect("","","");
+     					mysql_select_db("",$conexion);
+						//$nombre=$_SESSION[folio_generado].$_FILES["arrendamiento"]["name"][$i];
+						$identificacion=$_SESSION[folio_generado]."_"."Formato_de_Tramite".".pdf";
+						$sql="UPDATE tblsolicitud SET formtramite='$formtramite' WHERE folio='$_SESSION[folio_generado]'";
+						mysql_query($sql);
+						$mens = "SE HA ENVIADO EXITOSAMENTE SU ARCHIVO";
+						print "<script>alert('$mens')</script>";
+						print('<META HTTP-EQUIV="Refresh" CONTENT=0;URL=documentos.php>');
+						
+				     }else{
+                        echo "<br>No se ha podido mover el archivo: ".$_FILES["FormatoTramite"]["name"][$i];
+                    }
+                }else{
+                    echo "<br>No se ha podido crear la carpeta: up/".$user;
+                }
+            }else{
+				 echo '<p></p>';
+				echo "<p style='color:red;'>".$_FILES["FormatoTramite"]["name"][$i]." - NO es un archivo PDF"."</p>";
+                
+				
+            }
+        }
+    }else{
+        //echo "<br>No se ha subido ninguna imagen";
+    }
+    ?>  
+    		</div>
+    	</div>      
+	</div>
+</div>
+
+
 
 </div>
 <!-- Finish Body -->
