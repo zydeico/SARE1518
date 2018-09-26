@@ -19,7 +19,7 @@
 include "conexion.php";
 $foliou=$_SESSION['folio_generado'];;
 
-$sql = "SELECT * FROM tblsolicitud  WHERE folio='$foliou'";
+$sql = "SELECT * FROM tblsolicitud  WHERE folio='$folio'";
 
 $result = mysql_query ($sql);
 // verificamos que no haya error

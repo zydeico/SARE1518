@@ -25,7 +25,7 @@
 include "conexion.php";
 $foliou=$_SESSION['folio_generado'];;
 
-$sql = "SELECT * FROM tblsolicitud  WHERE folio='$foliou'";
+$sql = "SELECT * FROM tblsolicitud  WHERE folio='$folio'";
 
 $result = mysql_query ($sql);
 // verificamos que no haya error
@@ -225,7 +225,7 @@ if ( !$result )
 	 		if( $exists =='1') 
 			print '<input type="checkbox" name="CheckboxGroup1" id="CheckboxGroup1_1" value="1" checked="true" disabled>' 
 			*/?>
-            <!--<label>Identificación
+            <!--<label>Identificaciï¿½n
             </label>            
             <br>-->
             
@@ -328,13 +328,6 @@ print "<script>alert('$mens1')</script>";
 print('<META HTTP-EQUIV="Refresh" CONTENT=0;URL=index.php >');
 }?>
     </div>
-    
-    
-
-
-
-
-
 
 
 <!-- Finish Body -->

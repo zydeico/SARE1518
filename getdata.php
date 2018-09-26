@@ -480,7 +480,7 @@ while ($row = mysql_fetch_array($resultado, MYSQL_ASSOC)) {
     		<input id="input1g"  name="input1g" type="file" class="file" data-show-preview="false" multiple data-show-upload="false" data-max-File-Size="15000"  data-allowed-file-extensions='["pdf"]'>
   		</div>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-4"> 
 		<div class="form-group">
         <span class="glyphicon glyphicon-arrow-down"></span>
         	<label for="fn">Poder Notarial</label>
