@@ -17,9 +17,9 @@
 <?php
 
 include "conexion.php";
-$foliou=$_SESSION['folio_generado'];;
+$folio=$_SESSION['folio_generado'];;
 
-$sql = "SELECT * FROM tblsolicitud  WHERE folio='$foliou'";
+$sql = "SELECT * FROM tblsolicitud  WHERE folio='$folio'";
 
 $result = mysql_query ($sql);
 // verificamos que no haya error
@@ -45,9 +45,9 @@ if ( !$result )
 <!-- Body -->
 <form action="" method="post" enctype="multipart/form-data" name="inscripcion" >
 <div class="panel-body">
-<h3 align="center" style="color:color:#042944;">DIRECCIÓN GENERAL DE DESARROLLO ECONMICO</h3>
+<h3 align="center" style="color:color:#042944;">DIRECCIï¿½N GENERAL DE DESARROLLO ECONMICO</h3>
 <p align="center" style="font-size:20px;">SARE</p><br />
-<p align="left" style="font-size:15px;">* Dependiendo de tu tramite necesitas subir la documentación correspondiente (persona física o moral).</p><br />
+<p align="left" style="font-size:15px;">* Dependiendo de tu tramite necesitas subir la documentaciï¿½n correspondiente (persona fï¿½sica o moral).</p><br />
 
 
 	<div class="row">
@@ -149,9 +149,9 @@ if ( !$result )
 		<div class="input-group">
 			<div  style="background:rgba(231,231,231,1.00); padding:8px;border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;-webkit-border-radius: 10px 10px 10px 10px;">
 			<p></p>
-    		<span class="input-group" id="sizing-addon2" style="font-size:16px; font-weight:bold;"> Copia de Identificación</span>
+    		<span class="input-group" id="sizing-addon2" style="font-size:16px; font-weight:bold;"> Copia de Identificaciï¿½n</span>
 	 		 <input type="file"  class="form-control-addon" placeholder="" aria-describedby="sizing-addon2" name="identificacion[]" multiple><br />
-      		<button class="btn btn-sm btn-primary" type="submit" name="enviar" value="Enviar">Subir Identificación</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      		<button class="btn btn-sm btn-primary" type="submit" name="enviar" value="Enviar">Subir Identificaciï¿½n</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
             <input type="checkbox"  data-toggle="toggle" data-size="small" data-on="<i class='glyphicon glyphicon-ok'></i>"  data-off="<i class='glyphicon glyphicon-remove'></i>" data-onstyle="success"
 	  <?php 
@@ -553,7 +553,7 @@ if ( !$result )
 	<div class="input-group">
 		<div  style="background:rgba(231,231,231,1.00); padding:8px;border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;-webkit-border-radius: 10px 10px 10px 10px;">
 		<p></p>
-        <span class="input-group" id="sizing-addon2"  style="font-size:16px; font-weight:bold;"> Revisión de Predial</span>
+        <span class="input-group" id="sizing-addon2"  style="font-size:16px; font-weight:bold;"> Revisiï¿½n de Predial</span>
 	    <input type="file"  class="form-control-addon" placeholder="" aria-describedby="sizing-addon2" name="predial[]" multiple><br />
         <button class="btn btn-sm btn-primary" type="submit" name="enviar" value="Enviar">Subir Revision de Predial</button>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -2,7 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-
 <title> </title>
 <link rel="icon" type="image/png" href="img/ico.png" />
 <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -12,28 +11,19 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
-
 <?php
-
 include "conexion.php";
-$foliou=$_SESSION['folio_generado'];;
-
+$folio=$_SESSION['folio_generado'];;
 $sql = "SELECT * FROM tblsolicitud  WHERE folio='$folio'";
-
 $result = mysql_query ($sql);
 // verificamos que no haya error
 if ( !$result )
      die ("Error ejecutando la consulta");
-    
-    
     $num_filas = mysql_num_rows($result);
-    
     if ($num_filas > 0){        
         $fila = mysql_fetch_array($result);
         }
 ?>
-
 <body background="img/fondo_salamanca.png">
 <div class="container">
 <!-- Header -->
@@ -48,8 +38,6 @@ if ( !$result )
 <h3 align="center" style="color:color:#042944;">DIRECCION DE DESARROLLO URBANO, ECOLOG&Iacute;A Y PLANEACI&Oacute;N DE <p>APASEO EL ALTO, GTO</p></h3>
 <p align="center" style="font-size:20px;">SARE</p><br />
 <p align="left" style="font-size:15px;">* Dependiendo de tu tramite necesitas subir la documentaci&oacute;n correspondiente (persona f&iacute;sica o moral).</p><br />
-
-
 	<div class="row">
       <div class="col-md-3">
         <div class="input-group">
@@ -58,11 +46,8 @@ if ( !$result )
         </div>
       </div>
     </div>    
-    
    <br />
-
 <div class="row">
-
 <div class="col-md-6">
     <label class="control-label" for="archivo">Adjuntar Archivo </label><span style="font-size:13px; font-style:italic;"> (Puedes adjuntar archivos con un  formato PDF no mayores a 15MB)</span><br/>
 <div class="input-group">
@@ -76,44 +61,34 @@ if ( !$result )
   			$file ='../documentos123/'.$_SESSION[folio_generado]."_"."Escritura.pdf";
     		//Devuelve true
      		$exists = file_exists( $file );
-	  
 	 		if( $exists =='1') print "checked=true"?> DISABLED /></label>
             <br>
-	  
 	  <?php
     # definimos la carpeta destino
     $carpetaDestino="../documentos123/";
- 
     # si hay algun archivo que subir
     if($_FILES["archivo"]["name"][0])
     {
-	
         # recorremos todos los arhivos que se han subido
         for($i=0;$i<count($_FILES["archivo"]["name"]);$i++)
         {
- 
             # si es un formato de pdf
             if($_FILES["archivo"]["type"][$i]=="application/pdf" )
             {
- 
                 # si exsite la carpeta o se ha creado
                 if(file_exists($carpetaDestino) || @mkdir($carpetaDestino))
                 {
                     $origen=$_FILES["archivo"]["tmp_name"][$i];
                     $destino=$carpetaDestino.$_FILES["archivo"]["name"][$i];
 					$destino=$carpetaDestino.$_SESSION[folio_generado]."_"."Escritura.pdf";
- 
                     # movemos el archivo
-					
                     if(@move_uploaded_file($origen, $destino))
                     {
 						//unlink($origen);
 					    //echo "<br>".$_FILES["archivo"]["name"][$i]." movido correctamente";
                         //echo "<br>"." Guardado Exitosamente";
-						
 						$conexion = mysql_connect("","","");
      					mysql_select_db("",$conexion);
-						
 						//$nombre=$_SESSION[folio_generado].$_FILES["archivo"]["name"][$i];
 						$escritura=$_SESSION[folio_generado]."_"."Escritura".".pdf";
 						$sql="UPDATE tblsolicitud SET cescritura='$escritura' WHERE folio='$_SESSION[folio_generado]'";
@@ -131,7 +106,6 @@ if ( !$result )
             }else{
                 echo '<p></p>';
 				echo "<p style='color:red;'>".$_FILES["archivo"]["name"][$i]." - NO es un archivo PDF"."</p>";
-				
             }
         }
     }else{
@@ -140,9 +114,7 @@ if ( !$result )
 	?>
     </div>
     </div> 
-        
 </div>
-
 <!--Entrada nueva?--->    
     <div class="col-md-6">
      <br />
@@ -152,28 +124,23 @@ if ( !$result )
     		<span class="input-group" id="sizing-addon2" style="font-size:16px; font-weight:bold;"> Copia de Identificaci&oacute;n</span>
 	 		 <input type="file"  class="form-control-addon" placeholder="" aria-describedby="sizing-addon2" name="identificacion[]" multiple><br />
       		<button class="btn btn-sm btn-primary" type="submit" name="enviar" value="Enviar">Subir Identificaci&oacute;n</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            
+
             <input type="checkbox"  data-toggle="toggle" data-size="small" data-on="<i class='glyphicon glyphicon-ok'></i>"  data-off="<i class='glyphicon glyphicon-remove'></i>" data-onstyle="success"
 	  <?php 
   			$file ='../documentos123/'.$_SESSION[folio_generado]."_"."Identificacion.pdf";
     		//Devuelve true
      		$exists = file_exists( $file );
-	  
 	 		if( $exists =='1') print "checked=true"?> DISABLED /></label>
             <br>
 			<?php
-
     # definimos la carpeta destino
     $carpetaDestino="../documentos123/";
- 
     # si hay algun archivo que subir
     if($_FILES["identificacion"]["name"][0])
     {
-	
         # recorremos todos los arhivos que se han subido
         for($i=0;$i<count($_FILES["identificacion"]["name"]);$i++)
         {
- 
             # si es un formato de pdf
             if($_FILES["identificacion"]["type"][$i]=="application/pdf" )
             {
@@ -724,37 +691,27 @@ if ( !$result )
   			$file ='../documentos123/'.$_SESSION[folio_generado]."_"."Formato_de_tramite.pdf";
     		//Devuelve true
      		$exists = file_exists( $file );
-	  
 	 		if( $exists =='1') print "checked=true"?> DISABLED /></label>
             <br>
 			<?php
-
     # definimos la carpeta destino
     $carpetaDestino="../documentos123/";
- 
     # si hay algun archivo que subir
     if($_FILES["FormatoTramite"]["name"][0])
     {
-	
         # recorremos todos los arhivos que se han subido
         for($i=0;$i<count($_FILES["FormatoTramite"]["name"]);$i++)
         {
- 
             # si es un formato de pdf
             if($_FILES["FormatoTramite"]["type"][$i]=="application/pdf" )
             {
- 
                 # si exsite la carpeta o se ha creado
                 if(file_exists($carpetaDestino) || @mkdir($carpetaDestino))
-                {
-					
+                {		
                     $origen=$_FILES["FormatoTramite"]["tmp_name"][$i];
 					$destino=$carpetaDestino.$_FILES["archivo"]["name"][$i];
-					$destino=$carpetaDestino.$_SESSION[folio_generado]."_"."Formato_de_tramite.pdf";
-					
-                   
+					$destino=$carpetaDestino.$_SESSION[folio_generado]."_"."Formato_de_tramite.pdf";	
                     # movemos el archivo
-					
                     if(@move_uploaded_file($origen, $destino))
                     {
                         //echo "<br>".$_FILES["identificacion"]["name"][$i]." movido correctamente";
@@ -768,7 +725,6 @@ if ( !$result )
 						$mens = "SE HA ENVIADO EXITOSAMENTE SU ARCHIVO";
 						print "<script>alert('$mens')</script>";
 						print('<META HTTP-EQUIV="Refresh" CONTENT=0;URL=documentos.php>');
-						
 				     }else{
                         echo "<br>No se ha podido mover el archivo: ".$_FILES["FormatoTramite"]["name"][$i];
                     }
@@ -788,14 +744,9 @@ if ( !$result )
     	</div>      
 	</div>
 </div>
-
-
-
 </div>
 <!-- Finish Body -->
-
 </div>
-
 </form>
 <form action="generarfolio.php" method="post">
 <button class="btn btn-lg btn-primary" type="submit" name="enviar" value="Enviar">Continuar</button>

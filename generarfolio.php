@@ -23,9 +23,11 @@
 <?php
 
 include "conexion.php";
-$foliou=$_SESSION['folio_generado'];;
+$folio=$_SESSION['folio_generado'];;
 
-$sql = "SELECT * FROM tblsolicitud  WHERE folio='$folio'";
+$sql = "SELECT * FROM tblsolicitud WHERE folio='$folio'";
+
+//$sql = "SELECT * FROM tblsolicitud  WHERE folio='$folio'";
 
 $result = mysql_query ($sql);
 // verificamos que no haya error
@@ -218,7 +220,8 @@ if ( !$result )
 	 		if( $exists =='1') print "checked=true"?> DISABLED />
             Acta Constitutiva</label>
             <br>
-			<?php 
+      <?php 
+      
 			/*$file ='../../documentos/'.$_SESSION[folio_generado]."_"."Identificacion.pdf";
     		//Devuelve true
      		$exists = file_exists( $file );
@@ -299,7 +302,19 @@ if ( !$result )
            	<?php 
   			$file ='../documentos123/'.$_SESSION[folio_generado]."_"."Revision_de_Predial.pdf";
     		//Devuelve true
-     		$exists = file_exists( $file );
+         $exists = file_exists( $file );
+         
+         if( $exists =='1') print "checked=true"?> DISABLED />
+         Contrato de Comodato</label>
+         <br>
+         <label> &nbsp;
+         <input type="checkbox" name="CheckboxGroup1" id="CheckboxGroup1_0" style="transform:scale(1.5)" value="1"
+          <?php 
+     $file ='../documentos123/'.$_SESSION[folio_generado]."_"."Formato_de_Tramite.pdf";
+     //Devuelve true
+      $exists = file_exists( $file );
+
+
 	  
 	 		if( $exists =='1') print "checked=true"?> DISABLED />
             Revision de Predial</label>

@@ -23,9 +23,9 @@
 <?php
 
 include "conexion.php";
-$foliou=$_SESSION['folio_generado'];;
+$folio=$_SESSION['folio_generado'];;
 
-$sql = "SELECT * FROM tblsolicitud  WHERE folio='$foliou'";
+$sql = "SELECT * FROM tblsolicitud  WHERE folio='$folio'";
 
 $result = mysql_query ($sql);
 // verificamos que no haya error
@@ -225,7 +225,7 @@ if ( !$result )
 	 		if( $exists =='1') 
 			print '<input type="checkbox" name="CheckboxGroup1" id="CheckboxGroup1_1" value="1" checked="true" disabled>' 
 			*/?>
-            <!--<label>Identificación
+            <!--<label>Identificaciï¿½n
             </label>            
             <br>-->
             
@@ -271,7 +271,7 @@ if ( !$result )
      		$exists = file_exists( $file );
 	  
 	 		if( $exists =='1') print "checked=true"?> DISABLED />
-            Identificación</label>
+            Identificaciï¿½n</label>
             <br>
             
              <label>&nbsp;
@@ -306,7 +306,7 @@ if ( !$result )
         </div>
       </div>
     </div>
-    </div> <p> Nota: Para dar seguimiento a tu solicitud es necesario imprimir el formato o anotar tu número de folio.</p><br/>
+    </div> <p> Nota: Para dar seguimiento a tu solicitud es necesario imprimir el formato o anotar tu nï¿½mero de folio.</p><br/>
     <button class="btn btn-lg btn-primary" type="submit" name="regresar" value="regresar"  onclick="history.back(-1)">Regresar</button>
     <button class="btn btn-lg btn-primary" type="submit" name="imprimir" value="Enviar"  onClick="print()" >Imprimir</button>
     <button class="btn btn-lg btn-primary" type="submit" name="salir" value="Salir"   >Terminar</button>
