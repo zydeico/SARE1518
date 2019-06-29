@@ -6,4 +6,4 @@ Historial de versiones
 - Bugs agregados para resolver luego
 
 Desarrollo continuado en PHP
-# Se continuó con el proyecto a partir del 45%, se completo un 93% de las expectativas
+Se continuó con el proyecto a partir del 45%, se completo un 93% de las expectativas
